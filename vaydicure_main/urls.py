@@ -16,7 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from vaydicure_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',mainpage,name="mainpage"),
+    path('medicine/',medicinepage,name="MedicinePage"),
+    path('appointment/',appointmentpage,name="appointmentpage"),
+    path('urgentcare/',urgentcarepage,name="urgentcarepage"),
+    path('doctor/',doctorlist,name="doctorlist"),
+    path('chatbot/',chatbot,name="chatbot"),
+    path('get-doctors/', get_doctors, name='get_doctors'),
+    
+
+
 ]
