@@ -1,0 +1,112 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(180deg, #B6DCFF, #FFFFFF, #B8DDFF);
+    background-repeat: no-repeat;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
+
+.mainSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+.chatbot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 45%;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.chatbotHead {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    border-radius: 10px;
+    color: white;
+    gap: 10px;
+    position: absolute;
+    top: 10px; 
+    left: 32%;
+    transform: translateX(-50%);
+}
+
+.chatbotLogo {
+    height: 45px;
+    width: 45px;
+    margin: 10px;
+}
+
+.Chatbotmain {
+    display: flex;
+    background-color: #1195F8;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    gap: 10px;
+}
+
+.image {
+    height: 166px;
+    width: 225px;
+}
+
+.subSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-top: 100px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px 40px; /* Ensure space for the button */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #E4E4E4;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-container button {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 0;
+}
+
+.input-container button img {
+    width: 25px; 
+    height: 25px;
+}
