@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="appoinment.css" />
   </head>
   <body>
     <div class="mainContainer">
       <div class="header">
-        <img src="Images/logo.png" alt="#" />
-        <img src="Images/name.png" alt="" />
+        <a href="home.html"
+          ><img class="img1" src="Images/logo.png" alt="logo"
+        /></a>
+        <img class="img2" src="Images/name.png" alt="name" />
       </div>
       <div class="mainSection">
         <div class="subSection">
-          <a href="#">Medicine Search</a>
-          <a href="#">Appointment Book</a>
-          <a href="#">Urgent Care</a>
+          <a href="medicine.html">Medicine Search</a>
+          <a href="appointment.html">Appointment Book</a>
+          <a href="urgentcare.html">Urgent Care</a>
         </div>
         <div class="chatbot">
           <div class="chatbotHead">
@@ -29,12 +31,11 @@
             <img src="Images/Background.png" alt="" class="image" />
           </div>
           <div class="input-container">
-    <button onclick="searchFunction()">
-        <img src="Images/Upload.png" alt="Search">
-    </button>
-    <input type="text" placeholder="Search...">
-</div>
-
+            <button onclick="searchFunction()">
+              <img src="Images/Upload.png" alt="Search" />
+            </button>
+            <input type="text" placeholder="Enter Your message..." />
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,165 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 90vh;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(180deg, #b6dcff, #ffffff, #b8ddff);
+  background-repeat: no-repeat;
+}
+
+/* Header Section */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header img {
+  width: 4%;
+}
+
+.header .img2 {
+  width: 7%;
+}
+
+/* Main Container */
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 60px; /* Adjusted to account for the fixed header */
+}
+
+/* Subsection */
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #787878;
+  border-radius: 10px;
+  height: 100%;
+  /* margin: 20px; */
+  margin-top: 280px;
+  margin-right: 80px;
+  padding: 25px;
+}
+
+.subSection a {
+  text-decoration: none;
+  color: #777777;
+  padding: 20px;
+}
+
+/* Urgent Container */
+
+.UrgentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 92.5%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+/* Info Box */
+
+.info-box {
+  width: 90%;
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+  margin: 20px;
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.info-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #555;
+}
+
+.info-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.info-list li {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Form Box */
+
+.form-box {
+  width: 90%;
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  margin: 20px;
+}
+
+/* Text Area */
+
+.symptom-input {
+  width: 100%;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  resize: none;
+  background: #f3f3f3;
+}
+
+/* Submit Button */
+
+.submit-btn {
+  width: 100px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #1195f8;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0a64c8;
+}
