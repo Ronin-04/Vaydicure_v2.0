@@ -1,25 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VAYDICURE</title>
-</head>
-<body>
-<h1>Doctors List</h1>
-    <table>
+  </head>
+  <body align="center">
+    <style>
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      a {
+        text-decoration: none;
+      }
+      container {
+        width: 100%;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      td {
+        background-color: #f9f9f9;
+      }
+
+      td button {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <h1>Book your slot</h1>
+    <div class="container">
+      <table>
+        {% comment %}
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Specialization</th>
-                <th>Location</th>
-                <th>Contact</th>
-                <th>Available Days</th>
-                <th>Available Time</th>
-            </tr>
+          <tr>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Location</th>
+            <th>Contact</th>
+            <th>Available Days</th>
+            <th>Available Time</th>
+            <th>Action</th>
+          </tr>
         </thead>
+        {% endcomment %}
         <tbody>
+          <table border="1">
+            <tr>
+              <th>Name</th>
+              <th>Specialization</th>
+              <th>Location</th>
+              <th>Contact</th>
+              <th>Available Days</th>
+              <th>Available Time</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>Dr. John Doe</td>
+              <td>Cardiologist</td>
+              <td>New York</td>
+              <td>123-456-7890</td>
+              <td>Monday - Friday</td>
+              <td>8:00 AM - 2:00 PM</td>
+              <td>
+                <a href="https://calendly.com/pb7439578071/30min">Book</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dr. Jane Smith</td>
+              <td>Dermatologist</td>
+              <td>Los Angeles</td>
+              <td>987-654-3210</td>
+              <td>Tuesday - Saturday</td>
+              <td>9:00 AM - 3:00 PM</td>
+              <td>
+                <a href="https://calendly.com/pb7439578071/30min">Book</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dr. Robert Brown</td>
+              <td>Neurologist</td>
+              <td>Chicago</td>
+              <td>456-789-0123</td>
+              <td>Monday - Thursday</td>
+              <td>10:00 AM - 4:00 PM</td>
+              <td>
+                <a href="https://calendly.com/pb7439578071/30min">Book</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dr. Emma Wilson</td>
+              <td>Pediatrician</td>
+              <td>Houston</td>
+              <td>321-654-9870</td>
+              <td>Wednesday - Sunday</td>
+              <td>7:00 AM - 1:00 PM</td>
+              <td>
+                <a href="https://calendly.com/pb7439578071/30min">Book</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dr. Michael Johnson</td>
+              <td>Orthopedic Surgeon</td>
+              <td>Miami</td>
+              <td>654-321-0987</td>
+              <td>Thursday - Monday</td>
+              <td>11:00 AM - 5:00 PM</td>
+              <td>
+                <a href="https://calendly.com/pb7439578071/30min">Book</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dr. Mahesh Raju</td>
+              <td>Surgeon</td>
+              <td>Hyderabad</td>
+              <td>123-654-798</td>
+              <td>Sundays</td>
+              <td>12:00 AM - 4:00 AM</td>
+              <td>
+                <a href="https://calendly.com/pb7439578071/30min">Book</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dr. Shweta Dutta</td>
+              <td>Physician</td>
+              <td>Chennai</td>
+              <td>123-123-123</td>
+              <td>Monday - Friday</td>
+              <td>9:00 AM - 4:00 PM</td>
+              <td>
+                <a href="https://calendly.com/pb7439578071/30min">Book</a>
+              </td>
+            </tr>
+          </table>
         </tbody>
-    </table>
-</body>
+      </table>
+    </div>
+  </body>
 </html>

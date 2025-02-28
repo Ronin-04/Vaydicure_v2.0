@@ -340,7 +340,7 @@
 
       let userName = "";
 
-      // Function to send a user message
+      
       function sendMessage() {
         const userMessage = userInput.value.trim();
         if (userMessage === "") return;
@@ -361,7 +361,7 @@
         }, 500);
       }
 
-      // Function to generate bot responses
+      
       function generateBotResponse(message) {
         let response = "";
 
@@ -376,7 +376,7 @@
         addMessage(response, "bot");
       }
 
-      // Function to add a new message
+      
       function addMessage(message, sender) {
         const messageElement = document.createElement("div");
         messageElement.classList.add(

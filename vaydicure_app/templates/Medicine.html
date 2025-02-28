@@ -223,7 +223,11 @@
         font-size: 25.182px;
         font-style: normal;
         font-weight: 700;
-        line-height: normal;
+        {% comment %} line-height: normal; {% endcomment %}
+      }
+      .input_box:focus{
+        border:none;
+        outline:none;
       }
     </style>
     <div class="mainContainer">
@@ -261,7 +265,7 @@
         }
         document.getElementById('medicineSearchInput').addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
-                searchMedicine(); // Call the search function
+                searchMedicine(); 
             }
         });
       function searchMedicine() {
@@ -273,13 +277,13 @@
             return;
         }
 
-        // OpenFDA API URL
+        
         const apiUrl = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:${query}`;
 
-        // Clear previous results
+        
         resultsDiv.innerHTML = "<p>Searching...</p>";
 
-        // Fetch data from OpenFDA API
+        
         fetch(apiUrl)
             .then(response => {
                 if (!response.ok) {
@@ -309,7 +313,7 @@
                         <a href="https://open.fda.gov/apis/drug/label/" target="_blank">OpenFDA Page</a> {% endcomment %}
                     `;
                 }else {
-                    // When no results are found
+                    
                     resultsDiv.innerHTML = "<p style='color:blue;'>Medicine not found. Please try another name.</p>";
                 }
             })
