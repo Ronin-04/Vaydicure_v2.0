@@ -10,44 +10,33 @@
   </head>
   <body>
     <style>
-      /* General Styling */
-      {% comment %} body {
-        font-family: Arial, sans-serif;
-        
-        background: #66a3ff; /* Light blue gradient */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      } {% endcomment %}
-
       /* Chatbot Container */
-      .chatbot-container {
+      {% comment %} .chatbot-container {
         width: 350px;
         background: white;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-      }
+      } {% endcomment %}
 
       /* Chat Header */
-      .chat-header {
+      {% comment %} .chat-header {
         background: #007bff;
         color: white;
         padding: 15px;
         text-align: center;
         font-weight: bold;
-      }
+      } {% endcomment %}
 
       /* Chat Messages */
       .chat-messages {
+        width: 90%;
         height: 350px;
         overflow-y: auto;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        background: #f9f9f9;
+        {% comment %} background: #f9f9f9; {% endcomment %}
       }
 
       /* Chat Bubbles */
@@ -62,7 +51,7 @@
 
       .bot-message {
         align-self: flex-start;
-        background: #f1f1f1;
+        background: #1195F8;
         color: black;
       }
 
@@ -76,10 +65,12 @@
 
       /* Chat Input */
       .chat-input {
+        width: 90%;
         display: flex;
-        border-top: 1px solid #ddd;
+        {% comment %} border-top: 1px solid #ddd; {% endcomment %}
+        border-radius: 20.77px;
+        background: rgba(228, 228, 228, 0.42);
         padding: 10px;
-        background: white;
       }
 
       .chat-input input {
@@ -88,16 +79,18 @@
         border: none;
         border-radius: 5px;
         outline: none;
+        background: rgba(228, 228, 228, 0.1);
       }
 
       .chat-input button {
         margin-left: 10px;
         padding: 10px 15px;
-        background: #007bff;
         color: white;
         border: none;
-        border-radius: 5px;
         cursor: pointer;
+        border-radius: 100px;
+        background: #1195F8;
+        width: 90px;
       }
 
       .chat-input button:hover {
@@ -233,7 +226,7 @@
         height: 25px;
       }
 
-      .main_container {
+      .chatbot-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -376,12 +369,6 @@
           response = `You can book your appointment here: <a href='#'>Click here to book</a>`;
         } else if (message.toLowerCase().includes("reschedule")) {
           response = `To reschedule your appointment, please use this link: <a href='#'>Click here to reschedule</a>`;
-        } else if (message.toLowerCase().includes("medicine")) {
-          response = `Use the <strong>Medicine Search</strong> feature in the menu.`;
-        } else if (message.toLowerCase().includes("translate")) {
-          response = `Use the <strong>Translation</strong> feature in the menu to translate text.`;
-        } else if (message.toLowerCase().includes("prescription")) {
-          response = `Upload your prescription using the menu to get recommendations.`;
         } else {
           response = `I can help with booking appointments, searching medicines, translations, and prescription recommendations. Let me know what you need!`;
         }
