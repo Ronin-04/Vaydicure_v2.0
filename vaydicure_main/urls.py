@@ -30,6 +30,7 @@ urlpatterns = [
     path('doctor/',doctorlist,name="doctorlist"),
     path('chatbot/',chatbot,name="chatbot"),
     path('get-doctors/', get_doctors, name='get_doctors'),
+    path('mainpage/',mainpage,name="mainpage")
     
 
 

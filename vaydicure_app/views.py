@@ -107,6 +107,7 @@ def medicinepage(extracted_text):
 
 def appointmentpage(request):
     return render(request,"Appointment.html")
+    return redirect('/appointment/')
 
 
 def urgentcarepage(request):
