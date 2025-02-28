@@ -1,0 +1,148 @@
+body {
+  font-family: "Comfortaa", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f4f4f4;
+  background: url("home_background.jpg") no-repeat center center/cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 20px; */
+  color: white;
+  width: 100%;
+}
+.img1 {
+  width: 3%;
+}
+.img2 {
+  width: 7%;
+}
+.BackgroundImg {
+  height: 150px;
+  width: 150px;
+  opacity: 0.5;
+}
+.para {
+  color: #fff;
+  text-align: center;
+  font-family: Comfortaa;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.6px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  position: absolute;
+  bottom: 120px;
+  /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+.deco {
+  text-decoration: none;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+.feature-card a {
+  text-decoration: none;
+  color: #464646;
+}
+
+.feature-card h2 {
+  font-size: 1.5em;
+  color: #464646;
+  text-decoration: none;
+}
+
+.feature-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    position: static;
+    transform: none;
+    bottom: auto;
+  }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: rgb(249, 248, 248);
+  /*color: white;*/
+  font-size: 0.9em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 2em;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

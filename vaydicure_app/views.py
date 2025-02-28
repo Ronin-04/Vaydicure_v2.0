@@ -100,10 +100,15 @@ def medicinepage(extracted_text):
     # Default message if no specific recommendation found
     if not medicines:
         medicines.append("No specific medicine recommendation found.")
+
     return render(extracted_text,"Medicine.html")
+
+
 
 def appointmentpage(request):
     return render(request,"Appointment.html")
+
+
 def urgentcarepage(request):
     return render(request,"Urgentcare.html")
 
