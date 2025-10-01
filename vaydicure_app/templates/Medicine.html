@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    {% comment %} <link rel="stylesheet" href="static/Medicine.css" /> {% endcomment %}
+    {% comment %}
+    <link rel="stylesheet" href="static/Medicine1.css" />
+    {% endcomment %}
   </head>
 
   <body>
@@ -16,18 +18,22 @@
         padding: 0;
         background-image: linear-gradient(180deg, #b6dcff, #ffffff, #b8ddff);
         background-repeat: no-repeat;
-        font-family: "comfortaa", sans-serif;
+        font-family: "Comfortaa", sans-serif;
+
       }
 
       .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding-top: 20px;
+        padding-left:93px;
+        padding-right:93px;
         color: white;
       }
       .img1 {
-        width: 4%;
+        {% comment %} width:50px; {% endcomment %}
+        height:60px;
       }
       .img2 {
         width: 7%;
@@ -49,7 +55,7 @@
         width: 45%;
         background-color: #ffffff;
         border-radius: 20px;
-        padding-top: 10px;
+        padding: 5px;
         position: relative;
       }
 
@@ -86,12 +92,6 @@
         height: 166px;
         width: 225px;
         margin-top: 25px;
-      }
-
-      .subSection {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
       }
 
       .input-container {
@@ -138,27 +138,25 @@
         width: 45%;
         background-color: #ffffff;
         border-radius: 20px;
-        padding-top: 10px;
+        padding: 0px;
         position: relative;
       }
 
       .subSection {
-        /* position: fixed; */
-        bottom: 0;
+        display: flex;
         flex-direction: column;
-        border: 2px solid #787878;
+        border: 3px solid rgb(0, 0, 0);
         border-radius: 10px;
         height: 100%;
-        /* margin: 20px; */
-        margin-top: 260px;
-        margin-right: 80px;
-        padding: 25px;
+        margin-top: 50px;
+        margin-right: 25px;
+        padding: 20px;
       }
 
       .subSection a {
         text-decoration: none;
         color: #777777;
-        padding: 20px;
+        padding: 10px;
       }
 
       .Search_container {
@@ -168,7 +166,7 @@
         border-radius: 20px;
         background: #f3f3f3;
         width: 90%;
-        height: 90px;
+        height: 65px;
       }
 
       button {
@@ -184,10 +182,9 @@
         {% comment %} padding-top: 20%; {% endcomment %}
         padding: 50px;
         text-align: center;
-        margin-top: 3%;
+        margin-top: 50px;
         width: 75%;
-        height: 40%
-        ;
+        height: 40%;
         flex-shrink: 0;
         border-radius: 20px;
         background: #f3f3f3;
@@ -198,13 +195,12 @@
       .submit_btn {
         width: 150px;
         padding: 10px;
-        margin-top: 10px;
         background: #1195f8;
         color: white;
-        font-size: 16px;
-        font-weight: bold;
+        font-size: 20px;
+        font-weight: 500;
         border: none;
-        border-radius: 20px;
+        border-radius: 10px;
         cursor: pointer;
         transition: background 0.3s ease;
       }
@@ -214,15 +210,14 @@
       }
 
       .input_box {
-        padding-left: 2%;
+        padding-left: 15px;
         width: 100%;
         border: none;
         background-color: #f3f3f3;
         color: #777;
-        font-family: Comfortaa;
-        font-size: 25.182px;
+        font-size: 20px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         {% comment %} line-height: normal; {% endcomment %}
       }
       .input_box:focus{
@@ -232,16 +227,17 @@
     </style>
     <div class="mainContainer">
       <div class="header">
-        <a href="/mainpage/"
-          ><img class="img1" src="/static/logo.png" alt="logo"
+        <a href="/mainpage"
+          ><img class="img1" src="/static/Background_logo.png" alt="logo"
         /></a>
-        <img class="img2" src="/static/name.png" alt="name" />
+        <img class="img2" src="/static/name1.png" alt="name" />
       </div>
       <div class="mainSection">
         <div class="subSection">
           <a href="/medicine/">Medicine Search</a>
           <a href="/appointment/">Appointment Book</a>
           <a href="/urgentcare/">Urgent Care</a>
+          <a href="/reportvault/">Report Vault</a>
         </div>
         <div class="main_container">
           <div class="Search_container">
@@ -251,7 +247,9 @@
               id="medicineSearchInput"
               placeholder="Enter your message..."
             />
-            <button onclick="searchMedicine()" class="submit_btn">Search</button>
+            <button onclick="searchMedicine()" class="submit_btn">
+              Search
+            </button>
           </div>
           <div id="searchResults" class="data_container">
             <p>Search for Medicine by Symptoms or Brand Name</p>
@@ -260,49 +258,59 @@
       </div>
     </div>
     <script>
-       function searchMedicine() {
-            alert('Searching for medicine...');
-        }
-        document.getElementById('medicineSearchInput').addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                searchMedicine(); 
-            }
+      function searchMedicine() {
+        alert("Searching for medicine...");
+      }
+      document
+        .getElementById("medicineSearchInput")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            searchMedicine();
+          }
         });
       function searchMedicine() {
-        const query = document.getElementById('medicineSearchInput').value.trim();
-        const resultsDiv = document.getElementById('searchResults');
+        const query = document
+          .getElementById("medicineSearchInput")
+          .value.trim();
+        const resultsDiv = document.getElementById("searchResults");
 
         if (!query) {
-            resultsDiv.innerHTML = "<p style='color:red;'>Please enter a medicine name.</p>";
-            return;
+          resultsDiv.innerHTML =
+            "<p style='color:red;'>Please enter a medicine name.</p>";
+          return;
         }
 
-        
         const apiUrl = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:${query}`;
 
-        
         resultsDiv.innerHTML = "<p>Searching...</p>";
 
-        
         fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("No data found.");
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.results && data.results.length > 0) {
-                    const result = data.results[0];
-                    const generic_name = result.openfda.generic_name ? result.openfda.generic_name[0] : "Unknown";
-                    const substance_name = result.openfda.substance_name ? result.openfda.substance_name[0] : "Unknown";
-                    const brandName = result.openfda.brand_name ? result.openfda.brand_name[0] : "Unknown";
-                    const manufacturer = result.openfda.manufacturer_name ? result.openfda.manufacturer_name[0] : "Unknown";
-                    const product_type = result.openfda.product_type ? result.openfda.product_type[0] : "Unknown";
-                
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("No data found.");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            if (data.results && data.results.length > 0) {
+              const result = data.results[0];
+              const generic_name = result.openfda.generic_name
+                ? result.openfda.generic_name[0]
+                : "Unknown";
+              const substance_name = result.openfda.substance_name
+                ? result.openfda.substance_name[0]
+                : "Unknown";
+              const brandName = result.openfda.brand_name
+                ? result.openfda.brand_name[0]
+                : "Unknown";
+              const manufacturer = result.openfda.manufacturer_name
+                ? result.openfda.manufacturer_name[0]
+                : "Unknown";
+              const product_type = result.openfda.product_type
+                ? result.openfda.product_type[0]
+                : "Unknown";
 
-
-                    resultsDiv.innerHTML = `
+              resultsDiv.innerHTML = `
                         <p><strong>Brand Name:</strong> ${brandName}</p>
                         <p><strong>Manufacturer:</strong> ${manufacturer}</p>
                         <p><strong>Substance Name:</strong> ${substance_name}</p>
@@ -312,16 +320,17 @@
                         {% comment %} <p>For more information, visit:</p>
                         <a href="https://open.fda.gov/apis/drug/label/" target="_blank">OpenFDA Page</a> {% endcomment %}
                     `;
-                }else {
-                    
-                    resultsDiv.innerHTML = "<p style='color:blue;'>Medicine not found. Please try another name.</p>";
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                resultsDiv.innerHTML = "<p style='color:red;'>Medicine not found. Please try another name.</p>";
-            });
-    } 
+            } else {
+              resultsDiv.innerHTML =
+                "<p style='color:blue;'>Medicine not found. Please try another name.</p>";
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+            resultsDiv.innerHTML =
+              "<p style='color:red;'>Medicine not found. Please try another name.</p>";
+          });
+      }
     </script>
   </body>
 </html>

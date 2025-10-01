@@ -6,216 +6,306 @@
     <title>Urgent Care</title>
   </head>
   <style>
-    /* Global Styles */
+    body {
+      width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(180deg, #b6dcff, #ffffff, #b8ddff);
+        background-repeat: no-repeat;
+        font-family: "Comfortaa", sans-serif;
+    }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    /* Header Section */
 
-body {
-  width: 100%;
-  height: 90vh;
-  font-family: Arial, sans-serif;
-  background-image: linear-gradient(180deg, #b6dcff, #ffffff, #b8ddff);
-  background-repeat: no-repeat;
-}
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-left:93px;
+        padding-right:93px;
+      color: white;
+    }
+    .img1 {
+      {% comment %} width: 50px; {% endcomment %}
+      height: 60px;
+    }
+    .img2 {
+      width: 7%;
+    }
 
-/* Header Section */
+    /* Main Container */
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
+    .container1{
+      display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 100px;
+    }
 
-.header img {
-  width: 4%;
-}
+    /* Subsection */
 
-.header .img2 {
-  width: 7%;
-}
+    .subSection {
+      display: flex;
+      flex-direction: column;
+      border: 3px solid rgb(0, 0, 0);
+      border-radius: 10px;
+      {% comment %} height: 100%; {% endcomment %}
+      margin-top: 50px;
+      margin-right: 25px;
+      padding: 20px;
+    }
 
-/* Main Container */
+    .subSection a {
+      text-decoration: none;
+      color: #777777;
+      padding: 10px;
+    }
 
-.mainContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 60px; /* Adjusted to account for the fixed header */
-}
+    /* Urgent Container */
 
-/* Subsection */
+    .UrgentContainer {
+      display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80vh;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 0px;
+        position: relative;
+    }
 
-.subSection {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #787878;
-  border-radius: 10px;
-  height: 100%;
-  /* margin: 20px; */
-  margin-top: 280px;
-  margin-right: 80px;
-  padding: 25px;
-}
+    /* Info Box */
 
-.subSection a {
-  text-decoration: none;
-  color: #777777;
-  padding: 20px;
-}
+    .info-box {
+      width: 90%;
+      background: #f3f3f3;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: left;
+      margin: 20px;
+    }
 
-/* Urgent Container */
+    .info-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
 
-.UrgentContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  height: 92.5%;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  margin: 20px;
-}
+    .info-subtitle {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #555;
+    }
 
-/* Info Box */
+    .info-list {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
 
-.info-box {
-  width: 90%;
-  background: #f3f3f3;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: left;
-  margin: 20px;
-}
+    .info-list li {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 5px;
+    }
 
-.info-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
+    /* Form Box */
 
-.info-subtitle {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #555;
-}
+    .form-box {
+      width: 90%;
+      background: #f3f3f3;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: right;
+      margin: 20px;
+    }
 
-.info-list {
-  margin-top: 10px;
-  padding-left: 20px;
-}
+    /* Text Area */
 
-.info-list li {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 5px;
-}
+    .symptom-input {
+      width: 100%;
+      height: 80px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 14px;
+      color: #333;
+      outline: none;
+      resize: none;
+      background: #f3f3f3;
+    }
 
-/* Form Box */
+    /* Submit Button */
 
-.form-box {
-  width: 90%;
-  background: #f3f3f3;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: right;
-  margin: 20px;
-}
+    .submit-btn {
+      width: 100px;
+      padding: 10px;
+      margin-top: 10px;
+      background: #1195f8;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-/* Text Area */
-
-.symptom-input {
-  width: 100%;
-  height: 80px;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 14px;
-  color: #333;
-  outline: none;
-  resize: none;
-  background: #f3f3f3;
-}
-
-/* Submit Button */
-
-.submit-btn {
-  width: 100px;
-  padding: 10px;
-  margin-top: 10px;
-  background: #1195f8;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.submit-btn:hover {
-  background: #0a64c8;
-}
-
+    .submit-btn:hover {
+      background: #0a64c8;
+    }
+    .chatContainer{
+      display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80vh;
+        width: 45%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 0px;
+        position: relative;
+    }
   </style>
   <body>
     <div class="mainContainer">
       <div class="header">
-        <a href="mainpage/"><img class="img1" src="/static/logo.png" alt="logo" /></a>
-        <img class="img2" src="/static/name.png" alt="name" />
+        <a href="/mainpage"
+          ><img class="img1" src="/static/Background_logo.png" alt="logo"
+        /></a>
+        <img class="img2" src="/static/name1.png" alt="name" />
       </div>
-      <div class="subSection">
-        <a href="/medicine/">Medicine Search</a>
-        <a href="/appointment/">Appointment Book</a>
-        <a href="/urgentcare/">Urgent Care</a>
-      </div>
-      <div class="chatContainer">
-        <div class="UrgentContainer">
-          <div class="info-box">
-            <p class="info-title">Objective: Support urgent care consultations and handle critical cases.</p>
-            <p class="info-subtitle">When to use this service?</p>
-            <ul class="info-list">
-              <li>For urgent health conditions like severe pain or sudden illness.</li>
-              <li>For life-threatening situations.</li>
-            </ul>
+      <div class="container1">
+        <div class="subSection">
+          <a href="/medicine/">Medicine Search</a>
+          <a href="/appointment/">Appointment Book</a>
+          <a href="/urgentcare/">Urgent Care</a>
+          <a href="/reportvault/">Report Vault</a>
+        </div>
+        <div class="chatContainer">
+          <div class="UrgentContainer">
+            <div class="info-box">
+              <p class="info-title">
+                Objective: Support urgent care consultations and handle critical
+                cases.
+              </p>
+              <p class="info-subtitle">When to use this service?</p>
+              <ul class="info-list">
+                <li>
+                  For urgent health conditions like severe pain or sudden
+                  illness.
+                </li>
+                <li>For life-threatening situations.</li>
+              </ul>
+            </div>
+            <div class="form-box">
+              <textarea
+                id="urgentSymptomBox"
+                class="symptom-input"
+                placeholder="Describe your Symptoms and Urgency..."
+              ></textarea>
+              <button onclick="handleUrgentCare()" class="submit-btn">
+                Submit
+              </button>
+            </div>
+            <div
+              id="urgentCareStatus"
+              class="info-box"
+              style="display: none"
+            ></div>
           </div>
-          <div class="form-box">
-            <textarea id="urgentSymptomBox" class="symptom-input" placeholder="Describe your Symptoms and Urgency..."></textarea>
-            <button onclick="handleUrgentCare()" class="submit-btn">Submit</button>
-          </div>
-          <div id="urgentCareStatus" class="info-box" style="display: none;"></div>
         </div>
       </div>
     </div>
-    
+
     <script>
       const doctors = [
-        { name: "Dr. Shweta Dutta", specialization: "Physician", contact: "9876543210", gmeet: "https://meet.google.com/soe-cdjs-mri", keywords: ["fever", "general"] },
-        { name: "Dr. John Doe", specialization: "Cardiologist", contact: "9123456789", gmeet: "https://meet.google.com/soe-cdjs-mri", keywords: ["heart", "cardiac", "chest pain", "breathing", "heart rate"] },
-        { name: "Dr. Jane Smith", specialization: "Dermatologist", contact: "9012345678", gmeet: "https://meet.google.com/soe-cdjs-mri", keywords: ["skin", "rash", "itching", "dermatology", "acne", "scars", "moles"] },
-        { name: "Dr. Emma Wilson", specialization: "Pediatrician", contact: "9345678123", gmeet: "https://meet.google.com/soe-cdjs-mri", keywords: ["children", "child", "kid", "baby", "infant"] },
-        { name: "Dr. Michael Johnson", specialization: "Orthopedic Surgeon", contact: "9654321870", gmeet: "https://meet.google.com/soe-cdjs-mri", keywords: ["musculoskeletal", "spine", "sports injuries", "degenerative", "infections", "tumors", "congenital"] },
-        { name: "Dr. John Haddon", specialization: "Pulmonologist", contact: "8953337100", gmeet: "https://meet.google.com/soe-cdjs-mri", keywords: ["asthma", "pulmonologist", "chest", "cough"] },
-        { name: "Dr. Disha Sarkar", specialization: "Psychiatrist", contact: "8953337100", gmeet: "https://meet.google.com/soe-cdjs-mri", keywords: ["psychiatrist", "mental", "suicidal", "behavior"] }
+        {
+          name: "Dr. Shweta Dutta",
+          specialization: "Physician",
+          contact: "9876543210",
+          gmeet: "https://meet.google.com/soe-cdjs-mri",
+          keywords: ["fever", "general"],
+        },
+        {
+          name: "Dr. John Doe",
+          specialization: "Cardiologist",
+          contact: "9123456789",
+          gmeet: "https://meet.google.com/soe-cdjs-mri",
+          keywords: [
+            "heart",
+            "cardiac",
+            "chest pain",
+            "breathing",
+            "heart rate",
+          ],
+        },
+        {
+          name: "Dr. Jane Smith",
+          specialization: "Dermatologist",
+          contact: "9012345678",
+          gmeet: "https://meet.google.com/soe-cdjs-mri",
+          keywords: [
+            "skin",
+            "rash",
+            "itching",
+            "dermatology",
+            "acne",
+            "scars",
+            "moles",
+          ],
+        },
+        {
+          name: "Dr. Emma Wilson",
+          specialization: "Pediatrician",
+          contact: "9345678123",
+          gmeet: "https://meet.google.com/soe-cdjs-mri",
+          keywords: ["children", "child", "kid", "baby", "infant"],
+        },
+        {
+          name: "Dr. Michael Johnson",
+          specialization: "Orthopedic Surgeon",
+          contact: "9654321870",
+          gmeet: "https://meet.google.com/soe-cdjs-mri",
+          keywords: [
+            "musculoskeletal",
+            "spine",
+            "sports injuries",
+            "degenerative",
+            "infections",
+            "tumors",
+            "congenital",
+          ],
+        },
+        {
+          name: "Dr. John Haddon",
+          specialization: "Pulmonologist",
+          contact: "8953337100",
+          gmeet: "https://meet.google.com/soe-cdjs-mri",
+          keywords: ["asthma", "pulmonologist", "chest", "cough"],
+        },
+        {
+          name: "Dr. Disha Sarkar",
+          specialization: "Psychiatrist",
+          contact: "8953337100",
+          gmeet: "https://meet.google.com/soe-cdjs-mri",
+          keywords: ["psychiatrist", "mental", "suicidal", "behavior"],
+        },
       ];
 
       function handleUrgentCare() {
-        const symptomText = document.getElementById("urgentSymptomBox").value.toLowerCase().trim();
+        const symptomText = document
+          .getElementById("urgentSymptomBox")
+          .value.toLowerCase()
+          .trim();
         const statusBox = document.getElementById("urgentCareStatus");
 
         if (!symptomText) {
@@ -227,7 +317,10 @@ body {
         statusBox.innerHTML = `<p><strong>Status:</strong> Matching your case to an available doctor...</p>`;
 
         setTimeout(() => {
-          let assignedDoctor = doctors.find(doc => doc.keywords.some(keyword => symptomText.includes(keyword))) || doctors[0];
+          let assignedDoctor =
+            doctors.find((doc) =>
+              doc.keywords.some((keyword) => symptomText.includes(keyword))
+            ) || doctors[0];
 
           statusBox.innerHTML = `
             <p><strong>Doctor Assigned:</strong> ${assignedDoctor.name} (${assignedDoctor.specialization})</p>

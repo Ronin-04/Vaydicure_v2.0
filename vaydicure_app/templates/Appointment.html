@@ -74,23 +74,31 @@
       }
 
       .chat-input input {
-        flex: 1;
-        padding: 10px;
+        padding-left: 15px;
+        width: 100%;
         border: none;
-        border-radius: 5px;
-        outline: none;
-        background: rgba(228, 228, 228, 0.1);
+        background-color: #f3f3f3;
+        color: #777;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .chat-input input:focus{
+        border:none;
+        outline:none;
       }
 
       .chat-input button {
-        margin-left: 10px;
-        padding: 10px 15px;
+        width: 150px;
+        padding: 10px;
+        background: #1195f8;
         color: white;
+        font-size: 20px;
+        font-weight: 500;
         border: none;
+        border-radius: 10px;
         cursor: pointer;
-        border-radius: 100px;
-        background: #1195F8;
-        width: 90px;
+        transition: background 0.3s ease;
       }
 
       .chat-input button:hover {
@@ -104,17 +112,21 @@
         padding: 0;
         background-image: linear-gradient(180deg, #b6dcff, #ffffff, #b8ddff);
         background-repeat: no-repeat;
+        font-family: "Comfortaa", sans-serif;
       }
 
       .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding-top: 20px;
+        padding-left:93px;
+        padding-right:93px;
         color: white;
       }
       .img1 {
-        width: 4%;
+        {% comment %} width: 50px; {% endcomment %}
+        height: 60px;
       }
       .img2 {
         width: 7%;
@@ -137,7 +149,7 @@
         width: 45%;
         background-color: #ffffff;
         border-radius: 20px;
-        padding-top: 10px;
+        padding: 0px;
         position: relative;
       }
 
@@ -179,17 +191,17 @@
       .subSection {
         display: flex;
         flex-direction: column;
-        border: 2px solid #787878;
+        border: 3px solid rgb(0, 0, 0);
         border-radius: 10px;
         height: 100%;
-        margin-top: 290px;
+        margin-top: 50px;
         margin-right: 25px;
-        padding: 25px;
+        padding: 20px;
       }
       .subSection a {
         text-decoration: none;
         color: #777777;
-        padding: 20px;
+        padding: 10px;
       }
       .input-container {
         position: relative;
@@ -235,7 +247,7 @@
         width: 45%;
         background-color: #ffffff;
         border-radius: 20px;
-        padding-top: 10px;
+        padding: 0px;
         position: relative;
       }
 
@@ -305,16 +317,17 @@
 
     <div class="mainContainer">
       <div class="header">
-        <a href="mainpage/"
-          ><img class="img1" src="/static/logo.png" alt="logo"
+        <a href="/mainpage"
+          ><img class="img1" src="/static/Background_logo.png" alt="logo"
         /></a>
-        <img class="img2" src="/static/name.png" alt="name" />
+        <img class="img2" src="/static/name1.png" alt="name" />
       </div>
       <div class="mainSection">
         <div class="subSection">
           <a href="/medicine/">Medicine Search</a>
           <a href="/appointment/">Appointment Book</a>
           <a href="/urgentcare/">Urgent Care</a>
+          <a href="/reportvault/">Report Vault</a>
         </div>
         <div class="chatbot-container">
           <div class="chat-header"></div>
@@ -340,7 +353,6 @@
 
       let userName = "";
 
-      
       function sendMessage() {
         const userMessage = userInput.value.trim();
         if (userMessage === "") return;
@@ -361,7 +373,6 @@
         }, 500);
       }
 
-      
       function generateBotResponse(message) {
         let response = "";
 
@@ -369,6 +380,19 @@
           response = `You can book your appointment here: <a href="/doctor/">Click here to book</a>`;
         } else if (message.toLowerCase().includes("reschedule")) {
           response = `To reschedule your appointment, please use this link: <a href="/doctor/">Click here to reschedule</a>`;
+        } else if (message.toLowerCase().includes("cancel")) {
+          response = `To cancel your appointment, please visit: <a href="/doctor/">Cancel Appointment</a>`;
+        } else if (message.toLowerCase().includes("medicine")) {
+          response = `You can search for medicines here: <a href="/doctor/">Find Medicines</a>`;
+        } else if (message.toLowerCase().includes("prescription")) {
+          response = `For prescription recommendations, visit: <a href="/doctor/">Prescription Assistant</a>`;
+        } else if (
+          message.toLowerCase().includes("location") ||
+          message.toLowerCase().includes("hospital")
+        ) {
+          response = `Find nearby veterinary hospitals using our map service: <a href="/doctor/">Find Hospitals</a>`;
+        } else if (message.toLowerCase().includes("emergency")) {
+          response = `In case of an emergency, call our helpline or use this link to request an ambulance: <a href="/doctor/">Emergency Help</a>`;
         } else {
           response = `I can help with booking appointments, searching medicines, translations, and prescription recommendations. Let me know what you need!`;
         }
@@ -376,7 +400,6 @@
         addMessage(response, "bot");
       }
 
-      
       function addMessage(message, sender) {
         const messageElement = document.createElement("div");
         messageElement.classList.add(

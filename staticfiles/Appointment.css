@@ -1,0 +1,204 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(180deg, #b6dcff, #ffffff, #b8ddff);
+  background-repeat: no-repeat;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+.img1 {
+  width: 4%;
+}
+.img2 {
+  width: 7%;
+}
+
+.mainSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 100px;
+}
+
+.chatbot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 45%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.chatbotHead {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  border-radius: 10px;
+  color: white;
+  gap: 10px;
+  position: absolute;
+  top: 10px;
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+.chatbotLogo {
+  height: 45px;
+  width: 45px;
+  margin: 10px;
+}
+
+.Chatbotmain {
+  display: flex;
+  background-color: #1195f8;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  gap: 10px;
+}
+
+.image {
+  height: 166px;
+  width: 225px;
+  margin-top: 25px;
+}
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #787878;
+  border-radius: 10px;
+  height: 100%;
+  margin-top: 290px;
+  margin-right: 25px;
+  padding: 25px;
+}
+.subSection a {
+  text-decoration: none;
+  color: #777777;
+  padding: 20px;
+}
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin-top: 100px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px 40px; /* Ensure space for the button */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #e4e4e4;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-container button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 0;
+}
+
+.input-container button img {
+  width: 25px;
+  height: 25px;
+}
+
+.main_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 45%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.Search_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #f3f3f3;
+  width: 90%;
+  height: 90px;
+}
+
+button {
+  background-color: #1195f8;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.data_container {
+  padding-top: 20%;
+  text-align: center;
+  margin-top: 3%;
+  width: 90%;
+  height: 190px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #f3f3f3;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.submit_btn {
+  width: 100px;
+  height: 35px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #1195f8;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit_btn:hover {
+  background: #0a64c8;
+}
+
+.input_box {
+  padding-left: 2%;
+  width: 100%;
+  border: none;
+  background-color: #f3f3f3;
+  color: #777;
+  font-family: Comfortaa;
+  font-size: 25.182px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

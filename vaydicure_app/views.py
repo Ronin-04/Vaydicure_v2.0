@@ -107,17 +107,22 @@ def medicinepage(extracted_text):
 
 def appointmentpage(request):
     return render(request,"Appointment.html")
-    return redirect('/appointment/')
+    return redirect('/mainpage/')
 
 
 def urgentcarepage(request):
     return render(request,"Urgentcare.html")
+    return redirect('/mainpage/')
 
 def chatbot(request):
     return render(request,"Chatbotpage.html")
 def doctorlist(request):
     doctors = Doctor.objects.all()
     return render(request, 'Doctors_list.html', {'doctors': doctors})
+
+
+def reportvault(request):
+    return render(request,"ReportVault.html")
 
 def get_doctors(request):
     # Check if there are doctors in the database

@@ -30,7 +30,13 @@ urlpatterns = [
     path('doctor/',doctorlist,name="doctorlist"),
     path('chatbot/',chatbot,name="chatbot"),
     path('get-doctors/', get_doctors, name='get_doctors'),
-    path('mainpage/',mainpage,name="mainpage")
+    path('mainpage/',mainpage,name="mainpage"),
+    path('mainpage/medicine/',medicinepage,name="MedicinePage"),
+    path('mainpage/appointment/',appointmentpage,name="appointmentpage"),
+    path('mainpage/urgentcare/',urgentcarepage,name="urgentcarepage"),
+    path('mainpage/reportvault/',reportvault,name="reportvault"),
+    path('reportvault/',reportvault,name="reportvault"),
+
     
 
 

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% comment %}
+    <link rel="stylesheet" href="static/Appointment.css" />
+    {% endcomment %}
+  </head>
+  <body>
+    <style>
+      /* Chatbot Container */
+      {% comment %} .chatbot-container {
+        width: 350px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      } {% endcomment %}
+
+      /* Chat Header */
+      {% comment %} .chat-header {
+        background: #007bff;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+      } {% endcomment %}
+
+      /* Chat Messages */
+      .chat-messages {
+        width: 90%;
+        height: 350px;
+        overflow-y: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        {% comment %} background: #f9f9f9; {% endcomment %}
+      }
+
+      /* Chat Bubbles */
+      .bot-message,
+      .user-message {
+        max-width: 80%;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 5px;
+        word-wrap: break-word;
+      }
+
+      .bot-message {
+        align-self: flex-start;
+        background: #1195F8;
+        color: black;
+      }
+
+      .user-message {
+        align-self: flex-end;
+        background: #cce5ff;
+        color: #004085;
+        font-weight: bold;
+        text-align: right;
+      }
+
+      /* Chat Input */
+      .chat-input {
+        width: 90%;
+        display: flex;
+        {% comment %} border-top: 1px solid #ddd; {% endcomment %}
+        border-radius: 20.77px;
+        background: rgba(228, 228, 228, 0.42);
+        padding: 10px;
+      }
+
+      .chat-input input {
+        padding-left: 15px;
+        width: 100%;
+        border: none;
+        background-color: #f3f3f3;
+        color: #777;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .chat-input input:focus{
+        border:none;
+        outline:none;
+      }
+
+      .chat-input button {
+        width: 150px;
+        padding: 10px;
+        background: #1195f8;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .chat-input button:hover {
+        background: #0056b3;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(180deg, #b6dcff, #ffffff, #b8ddff);
+        background-repeat: no-repeat;
+        font-family: "Comfortaa", sans-serif;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-left:93px;
+        padding-right:93px;
+        color: white;
+      }
+      .img1 {
+        {% comment %} width: 50px; {% endcomment %}
+        height: 60px;
+      }
+      .img2 {
+        width: 7%;
+      }
+
+      .mainSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 100px;
+      }
+
+      .chatbot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80vh;
+        width: 45%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 0px;
+        position: relative;
+      }
+
+      .chatbotHead {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-direction: row;
+        border-radius: 10px;
+        color: white;
+        gap: 10px;
+        position: absolute;
+        top: 10px;
+        left: 35%;
+        transform: translateX(-50%);
+      }
+
+      .chatbotLogo {
+        height: 45px;
+        width: 45px;
+        margin: 10px;
+      }
+
+      .Chatbotmain {
+        display: flex;
+        background-color: #1195f8;
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        gap: 10px;
+      }
+
+      .image {
+        height: 166px;
+        width: 225px;
+        margin-top: 25px;
+      }
+
+      .subSection {
+        display: flex;
+        flex-direction: column;
+        border: 3px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        height: 100%;
+        margin-top: 50px;
+        margin-right: 25px;
+        padding: 20px;
+      }
+      .subSection a {
+        text-decoration: none;
+        color: #777777;
+        padding: 10px;
+      }
+      .input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin-top: 100px;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px 40px; /* Ensure space for the button */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #e4e4e4;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .input-container button {
+        background: none;
+        border: none;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .input-container button img {
+        width: 25px;
+        height: 25px;
+      }
+
+      .chatbot-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80vh;
+        width: 45%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 0px;
+        position: relative;
+      }
+
+      .Search_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f3f3f3;
+        width: 90%;
+        height: 90px;
+      }
+
+      button {
+        background-color: #1195f8;
+        border-radius: 10px;
+        color: white;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .data_container {
+        padding-top: 20%;
+        text-align: center;
+        margin-top: 3%;
+        width: 90%;
+        height: 190px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #f3f3f3;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      .submit_btn {
+        width: 100px;
+        height: 35px;
+        padding: 10px;
+        margin-top: 10px;
+        background: #1195f8;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .submit_btn:hover {
+        background: #0a64c8;
+      }
+
+      .input_box {
+        padding-left: 2%;
+        width: 100%;
+        border: none;
+        background-color: #f3f3f3;
+        color: #777;
+        font-family: Comfortaa;
+        font-size: 25.182px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .hero {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin: 1rem;
+        border-radius: 10px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero button {
+        background-color: #2f4f4f;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .hero button:hover {
+        background-color: #3e6363;
+    }
+    
+    .reports {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .reports ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .reports li {
+        margin: 0.8rem 0;
+    }
+    
+    .reports a {
+        color: #2f4f4f;
+        text-decoration: none;
+    }
+    
+    .reports a:hover {
+        text-decoration: underline;
+    }
+    </style>
+
+    <div class="mainContainer">
+      <div class="header">
+        <a href="/mainpage"
+          ><img class="img1" src="/static/Background_logo.png" alt="logo"
+        /></a>
+        <img class="img2" src="/static/name1.png" alt="name" />
+      </div>
+      <div class="mainSection">
+        <div class="subSection">
+          <a href="/medicine/">Medicine Search</a>
+          <a href="/appointment/">Appointment Book</a>
+          <a href="/urgentcare/">Urgent Care</a>
+          <a href="/reportvault/">Report Vault</a>
+        </div>
+        <div class="chatbot-container">
+            <main>
+                <section class="hero">
+                    <h1>Welcome to ReportVault</h1>
+                    <p>Your secure digital vault for reports and documents.</p>
+                    <button>Upload Reports</button>
+                    <button>View Reports</button>
+                </section>
+        
+                <section class="reports">
+                    <h2>Recent Reports</h2>
+                    <ul>
+                        <li><a href="#">Monthly Report - May 2025.pdf</a></li>
+                        <li><a href="#">Medicines Schedule Report</a></li>
+                        <li><a href="#">Insulin Report</a></li>
+                    </ul>
+                </section>
+            </main>
+            <h2>Work in pogress this page not functional</h2>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

@@ -7,7 +7,7 @@ body {
   align-items: center;
   text-align: center;
   background-color: #f4f4f4;
-  background: url("home_background.jpg") no-repeat center center/cover;
+  background: url("../images/home_background.jpg") no-repeat center center/cover;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +35,8 @@ body {
   width: 100%;
 }
 .img1 {
-  width: 3%;
+  /* width: 45px; */
+  height: 60px;
 }
 .img2 {
   width: 7%;
@@ -43,9 +44,19 @@ body {
 .BackgroundImg {
   height: 150px;
   width: 150px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .para {
+  color: #fff;
+  text-align: center;
+  font-family: Comfortaa;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.6px;
+}
+sub-para{
   color: #fff;
   text-align: center;
   font-family: Comfortaa;
@@ -117,7 +128,7 @@ body {
   width: 100%;
   text-align: center;
   padding: 10px;
-  background: rgb(249, 248, 248);
+  background: rgb(208, 248, 255);
   /*color: white;*/
   font-size: 0.9em;
   position: fixed;

@@ -8,39 +8,59 @@
       href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="static/Mainpage.css" />
-  
+    {% comment %}
+    <link rel="stylesheet" href="static/Mainpage1.css" />
+    {% endcomment %} {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Mainpage1.css' %}" />
+  </head>
   <body>
     <div class="container">
       <div class="header">
-        <img class="img1" src="static/logo.png" alt="logo" />
-        <img class="img2" src="static/name.png" alt="name" />
+
+        {% load static %}
+        
+
+        <img class="img1" src="{% static 'images/Background_logo.png' %}" alt="logo" />
+        <img class="img2" src="{% static 'images/name1.png' %}" alt="name" />
       </div>
       <div class="background">
-        <img src="static/logo.png" alt="#" class="BackgroundImg" />
+        {% comment %} <img src="static/logo1.png" alt="#" class="BackgroundImg" /> {% endcomment %}
+        <img src="{% static 'images/logo1.png' %}" alt="Logo" class="BackgroundImg" />
       </div>
-      <p class="para">Vaydicure – Your Personalized AI Health Partner!</p>
+      <p class="para">Medify – Your Personalized AI Health Partner!</p>
+      <p class="sub-para">
+        A Online Web-Application Platform to get sugession of medicines
+        according to symptoms, book appointments with doctor analyzing symptoms,
+        emergency purpose doctor's appointment booking,online
+        prescription/medical-report organising platform
+      </p>
+
       <div class="features">
-        <a class="deco" href="medicine/">
-        <div class="feature-card">
-          <h2>Medicine Search</h2>
-          <p>Your Health, Your Medicine - One Search, Instant Care</p>
-        </div>
-        </a>
         <a class="deco" href="appointment/">
-        <div class="feature-card">
-          <h2>Appointment Book</h2>
-          <p>Book or Reschedule Doctor Appointments Instantly, Anytime</p>
-        </div>
+          <div class="feature-card">
+            <h2>Appointment Booking</h2>
+            <p>Book or Reschedule Doctor Appointments Instantly, Anytime</p>
+          </div>
+        </a>
+        <a class="deco" href="medicine/">
+          <div class="feature-card">
+            <h2>Medicine Search</h2>
+            <p>
+              Your Health, Your Symptoms - One Search Medicine Recomendation
+            </p>
+          </div>
         </a>
         <a class="deco" href="urgentcare/">
-        <div class="feature-card">
-          <h2>Urgent Care</h2>
-          <p>Urgent Care, Instant Appointment Help When You Need It</p>
-        </div>
+          <div class="feature-card">
+            <h2>Urgent Care</h2>
+            <p>Urgent Care, Instant Appointment with Doctor</p>
+          </div>
         </a>
       </div>
-      <div class="footer">© Team Astra</div>
+      <div class="footer">
+        <span>Minor Project</span>
+        <span>Team Tech_Initiator</span>
+      </div>
     </div>
   </body>
 </html>
