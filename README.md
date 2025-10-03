@@ -1,4 +1,4 @@
-# Vaydicure – Your Personalized AI Health Partner  
+<!--# Vaydicure – Your Personalized AI Health Partner  
 
 ![Vaydicure Homepage](https://github.com/Ronin-04/Vaydicure/blob/main/home.png)
 
@@ -42,3 +42,4 @@ Now, open your browser and visit **http://127.0.0.1:8000/** to explore Vaydicure
 
 ## License  
 This project is open-source and licensed under the MIT License.  
+-->
